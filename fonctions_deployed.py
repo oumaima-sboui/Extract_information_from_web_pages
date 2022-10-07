@@ -1,5 +1,4 @@
 
-
 #!pip install openai
 import os
 import openai
@@ -276,8 +275,6 @@ def sum_fun (query):
 # # paraphrase text using transformers 
 #PEGASUS is an acronym for Pre-training with Extracted Gap-sentences for Abstractive SUmmarization Sequence-to-sequence models
 
-
-
 # https://huggingface.co/tuner007/pegasus_paraphrase
 
 ##import torch
@@ -303,14 +300,7 @@ def sum_fun (query):
 ##        a = get_response(j,1)
 ##        paraphrase.append(a)
 
-
-
-
-
 # # save the final text in a document
-
-
-
 
 ##from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 ##Story=[]
@@ -339,12 +329,6 @@ def sum_fun (query):
 ##from bing_image_downloader import downloader
 ##downloader.download("2022 Russian invasion Ukraine", limit=100,  output_dir='dataset', timeout=60, verbose=True)
 
-
-
-
-
-
-
 #scaping images from web pages
 ##img_tags = soup.find_all('img')
 ##urls= []
@@ -363,9 +347,6 @@ def sum_fun (query):
 ##
     
     
-
-# In[ ]:
-
 ##
 ##from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle 
 ##from reportlab.platypus.flowables import ParagraphAndImage, Image
@@ -389,69 +370,7 @@ def sum_fun (query):
 ##    story.append(Paragraph("",style=btL))
 ##    story.append(Image(filename ,width=390,height=200) )
 ##    i = i+1 
-##  
-##
-##
+
 ##doc.multiBuild(story) 
 ##       
-
-
-# # FAQ schema  for PAA keywords
-
-# In[ ]:
-##
-##
-##get_ipython().run_line_magic('cd', 'question_generation')
-##from pipelines import pipeline
-##
-##
-### In[ ]:
-##
-##
-##nlp = pipeline("e2e-qg")
-##
-##
-### In[ ]:
-##
-##
-###FOR THE TEXT PARAGRAPH
-##nlp(paraphrased_text)
-##
-##
-### In[ ]:
-##
-##
-##get_ipython().run_line_magic('pinfo2', 'ParagraphStyle')
-##
-##
-### In[ ]:
-##
-##
-##def drawMyRuler(pdf):
-##    pdf.drawString(100,810, 'x100')
-##    pdf.drawString(200,810, 'x200')
-##    pdf.drawString(300,810, 'x300')
-##    pdf.drawString(400,810, 'x400')
-##    pdf.drawString(500,810, 'x500')
-##
-##    pdf.drawString(10,100, 'y100')
-##    pdf.drawString(10,200, 'y200')
-##    pdf.drawString(10,300, 'y300')
-##    pdf.drawString(10,400, 'y400')
-##    pdf.drawString(10,500, 'y500')
-##    pdf.drawString(10,600, 'y600')
-##    pdf.drawString(10,700, 'y700')
-##    pdf.drawString(10,800, 'y800')    
-##
-##
-### In[ ]:
-##
-##
-##get_ipython().run_line_magic('pinfo2', 'aqgFunction')
-##
-
-# In[ ]:
-
-
-
 
