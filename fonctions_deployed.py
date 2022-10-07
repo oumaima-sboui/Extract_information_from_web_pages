@@ -25,27 +25,11 @@ warnings.filterwarnings("ignore")
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-
-
-
-
-
-
-
-
-
-
-
-
 OPENAI_API_KEY = "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"
 openai.api_key = OPENAI_API_KEY#os.getenv("OPENAI_API_KEY")
 
 
 # # define functions
-
-# In[4]:
-
-
 #Realise les fonctions TF-IDF
 def tf(word, document):   
     return document.count(word) / (len(document) * 1.)
@@ -58,9 +42,6 @@ def idf(word, liste_document):
 
 def tfidf(word, document, liste_document):   
     return tf(word, document) * idf(word, liste_document)
-
-
-# In[5]:
 
 
 def get_tokens(text):
@@ -85,15 +66,6 @@ def stemmed_info(text):
     return stemmed
 
 
-# In[90]:
-
-##
-##get_ipython().run_line_magic('pinfo2', 'Completion.create')
-
-
-# In[94]:
-
-
 # summarization
 def summary_gpt3(input_text):
     response = openai.Completion.create(
@@ -105,17 +77,6 @@ def summary_gpt3(input_text):
     frequency_penalty=0,
     presence_penalty=0
 )
-    #response = openai.Completion.create(
-        #engine="davinci-instruct-beta-v3",
-        #prompt=f"Given a transcript, get summary:\n\nTranscript: {input_text}\n\nSummary:",
-        #temperature=0,
-        #max_tokens=128,
-        #top_p=1,
-        #frequency_penalty=0,
-        #presence_penalty=0,
-        #stop=["\n"],
-        #n=3,
-        #best_of=1,
     
     summary = response["choices"][0]["text"]
     return summary.replace("\n","").strip()
@@ -162,22 +123,15 @@ def most_similar_file(array,documentkeywords):
     for i in range(len(documentkeywords)):
         
         for j in range(len(array)):
-            
-            
+           
             for k in range(1,10):
-                
-                
-                
-                
-               
+        
                 if(array[j] == users_interests[i][k][0]):
                     
                     
                     sim = sim + 1.0*users_interests[i][k][1]
                     
-                    
-                    
-                
+             
             similarity.append((i,sim))
         
             sim = 0.0
@@ -199,19 +153,13 @@ def sum_fun (query):
         print("No module named 'google' found")
      
     # to search
-    
-     
+ 
     for j in search(query, tld="co.in", num=20, stop=10, pause=2):
         #TLD: TLD stands for the top-level domain which means we want to search our results on google.com or google. in 
         #print(j)
         links.append(j)
 
-
-
     # # scraping the web  page
-
-
-
 
     textList = []
     textComp=[]
@@ -241,8 +189,6 @@ def sum_fun (query):
     # The inverse document frequency is a measure of the importance of the term in the whole corpus. In the TF-IDF scheme, 
     #it aims to give greater weight to less frequent terms, considered to be more discriminating 
     #It consists of calculating the logarithm of the inverse of the proportion of documents in the corpus that contain the term
-
-
 
     #define the quantity of the output key words 
     N = 10
@@ -276,8 +222,6 @@ def sum_fun (query):
 
 
     #Recommandation part
-    
-
        
     num_array = list()
     doc=""
@@ -307,22 +251,12 @@ def sum_fun (query):
     #print(final_text1)
 
 
-
-
-
-
-
     # Takes the input paragraph and splits it into a list of sentences
     from sentence_splitter import SentenceSplitter, split_text_into_sentences
     sentence_list=[]
     splitter = SentenceSplitter(language='en')
     for i in final_text1:
         sentence_list.append(splitter.split(i))
-
-
-
-
-
 
     # Do a for loop to iterate through the list of sentences and paraphrase each sentence in the iteration
     paraphrase0 = []
@@ -338,30 +272,7 @@ def sum_fun (query):
     print(paraphrased_text)
     return(paraphrased_text)
 
-
-# In[14]:
-
-
 #get_response("what toxins can cause seizures in dogs",1)
-
-
-# In[82]:
-
-
-#paraphrase
-
-
-# In[87]:
-
-
-#paraphrase0
-
-
-# In[98]:
-
-
-#paraphrase1 = [' '.join(x) for x in paraphrase0]
-# Combines the above list into a paragraph
 
 
 
