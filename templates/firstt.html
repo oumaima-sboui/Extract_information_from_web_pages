@@ -1,0 +1,169 @@
+<html><head>
+<meta charset="UTF-8" >
+
+<title>Sarmad_Project</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+
+  textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.error{
+            color: #D8000C;
+           
+         }
+    div#loading {
+      display: none;
+    border: 16px solid #f3f3f3 ;
+  border-radius: 50%;
+  border-top: 16px solid #40E0D0;
+  border-bottom: 16px solid #40E0D0;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+        section {
+            padding-top: 20px !important;
+        }
+
+        .ck-editor__editable_inline {
+            min-height: 530px;
+            max-height: 530px;
+        }
+
+  input[type=submit]:hover {
+  background-color: #40E0D0;
+}
+input[type=text] {
+  background-color: white;
+
+  
+  background-repeat: no-repeat;
+  
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #40E0D0;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+    </style>
+
+    <script type="text/javascript">// 
+
+    
+    <![CDATA[
+        function loading(){
+            
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("result").style.display = "none";
+        }
+         function stop_loading(){
+          document.getElementById("result").style.display = "none";
+
+         }
+         // function validateForm()                                 
+         // { 
+         //     var name = document.forms["myForm"]["keyword"];         
+         //     if (keyword.value == ""){ 
+         //         document.getElementById('errorname').innerHTML=" entre a valid keywords";  
+         //         keyword.focus(); 
+         //         return false; 
+         //     }else{
+         //         document.getElementById('errorname').innerHTML="";  
+         //     }
+         // }
+</script>
+
+
+</head>
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+<div class="navbar-brand">
+<a class="navbar-item" href="/">
+<i class="material-icons" style="font-size:60px;color:white;">home</i>
+</a>
+</div>
+</nav>
+<section class="section">
+<div class="is-flex is-align-items-center is-flex-wrap-wrap m-2 is-justify-content-center">
+
+
+
+
+<div class="card m-3" style="width: 500px; height:600px;">
+<div id = "content" class="is-flex is-justify-content-center is-flex-wrap-wrap is-align-items-center" style="height: 100%;">
+
+ 
+
+  <div class="content my-2 mx-4">
+
+<h2><b> <center><i class="material-icons" style="font-size:30px;color: #40E0D0;"> summarize</i>
+   Text generation from the top google results</center> </b></h2>
+   <br><br>
+   <form  name="myForm" action="/" method="post"  onsubmit="return false">
+
+
+  <label> Enter here your query : </label> <br>
+  <input  placeholder= "keywords"  id = "query" type="text" name="keyword"  required
+       minlength="3"  size="30" required pattern="[0-9a-zA-Z-\.]" style="padding: 16px 10px;margin: 4px 2px;width:250px"
+  cursor: pointer; >
+   <input type="submit" name="SUBMIT" value="submit" onclick="loading();"> <input type="reset" name="reset" value="reset" onclick= "stop_loading()"> <br> <br>
+<center><div id="loading"> </div></center>
+<div id = "content"> 
+<textarea  id = "result" placeholder="Your result text will be here ...">  </textarea> 
+
+
+</div>
+
+   </form>
+   </div>
+   <script>
+                                 
+     
+    
+    document.getElementById('result').value = "{{name}}".replace(/&#39;/g, "'").replace(/&#34;/g, '"')
+</script>
+  </div> 
+ 
+
+
+
+
+</div>
+</div>
+
+
+</section>
+
+</body></html>
+
+
+
+
