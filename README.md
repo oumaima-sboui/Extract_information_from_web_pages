@@ -1,4 +1,4 @@
-# Extract_information_from_web_pages
+# Extract information from web pages
 Globally, this project aims to extract from an entry query the information existing in the paragraphs of the web pages
 ## The process is illustrated in this step:
 * Scrap the links related to the query 
