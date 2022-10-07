@@ -178,10 +178,6 @@ def sum_fun (query):
                     textComp.append (data.get_text())
          
 
-
-
-
-
     #print(textComp)
 
 
@@ -276,8 +272,6 @@ def sum_fun (query):
 
 
 
-
-
 #PEAGUS
 # # paraphrase text using transformers 
 #PEGASUS is an acronym for Pre-training with Extracted Gap-sentences for Abstractive SUmmarization Sequence-to-sequence models
@@ -299,7 +293,6 @@ def sum_fun (query):
 ##  translated = model.generate(**batch,max_length=60,num_beams=10, num_return_sequences=num_return_sequences, temperature=1.5)
 ##  tgt_text = tokenizer.batch_decode(translated, skip_special_tokens=True)
 ##  return tgt_text
-
 
 
 # Do a for loop to iterate through the list of sentences and paraphrase each sentence in the iteration
